@@ -1,0 +1,93 @@
+/* UserPreferences.css */
+
+/* Base styles for the container */
+.user-preferences {
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px; /* Bottom space */
+    text-align: right; /* Align all text to the right */
+    width: 300px; /* Set a fixed width for the box */
+  }
+  
+  /* Light theme styles */
+  .user-preferences.light {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  /* Dark theme styles */
+  .user-preferences.dark {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  /* Input field styles */
+  .user-preferences input[type="text"] {
+    padding: 8px; /* Reduced padding */
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 18px); /* Adjusted width for symmetry */
+    transition: border 0.3s ease;
+    text-align: right; /* Align placeholder text to the right */
+  }
+  
+  /* Focus state for input */
+  .user-preferences input[type="text"]:focus {
+    border-color: #3498db; /* Blue border on focus */
+  }
+  
+  /* Button styles */
+  .user-preferences button {
+    padding: 8px 12px; /* Reduced padding for buttons */
+    margin: 5px; /* Adjusted margin for uniformity */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: calc(50% - 10px); /* Set buttons to occupy half of the container width */
+  }
+  
+  /* Button colors for light theme */
+  .user-preferences.light button {
+    background-color: #3498db; /* Primary blue */
+    color: white;
+  }
+  
+  .user-preferences.light button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+  }
+  
+  /* Button colors for dark theme */
+  .user-preferences.dark button {
+    background-color: #2980b9; /* Darker shade */
+    color: white;
+  }
+  
+  .user-preferences.dark button:hover {
+    background-color: #1f6394; /* Even darker shade on hover */
+  }
+  
+  /* Heading styles specifically for "User Preferences" */
+  .user-preferences h2 {
+    margin-bottom: 15px; /* Reduced margin */
+    color: #3498db; /* Set the text color to your specified blue */
+    font-size: 28px; /* Decreased font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align the heading text */
+  }
+  
+  /* Increase size for "Hello Guest" */
+  .user-preferences p.greeting {
+    font-size: 24px; /* Increased font size */
+    margin-top: 10px; /* Adjusted margin */
+    color: #333; /* Optional: Set color for the greeting text */
+  }
+  
+  /* Paragraph styles */
+  .user-preferences p {
+    margin-top: 15px;
+  }
+  

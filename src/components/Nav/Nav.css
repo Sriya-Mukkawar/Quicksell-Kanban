@@ -1,0 +1,64 @@
+.selectGroup {
+    padding: 2.5px;
+    width: auto;
+}
+
+.displayButton {
+    position: relative;
+}
+
+.dropOnClick {
+    position: absolute;
+    width: 220px;
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
+    margin-top: 11px;
+    z-index: 10;
+    border: 1px solid rgba(200, 200, 200, 0.7); 
+}
+
+.dropOnClick > * {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 5px; 
+    color: #333; 
+    transition: background-color 0.3s ease; 
+}
+
+.dropOnClick > *:last-child {
+    margin-bottom: 0; 
+}
+
+.dropOnClick > *:hover {
+    background-color: white; 
+}
+
+.btn {
+    background: white ;
+    color: black;
+    border: none; 
+    border-radius: 5px;
+    padding: 8px 12px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+    background: white; 
+}
+
+.selectStyle {
+    width: 100px;
+    border-radius: 5px;
+    background: #ffffff; 
+    padding: 2px 5px;
+    border: 1px solid #c1c1c1; 
+}
+
+@media only screen and (max-width: 768px) {
+    .dropOnClick {
+        width: 100%; 
+        max-width: 300px;
+    }
+}

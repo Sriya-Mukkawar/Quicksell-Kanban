@@ -1,0 +1,82 @@
+.dashContainer {
+  display: flex;
+  align-items: flex-start;
+  padding: 3% 2% 1.5%;
+  flex-wrap: wrap;
+  background:  #ffffff;
+  min-height: 100vh;
+  gap: 20px; 
+}
+
+.cardContainer {
+  width: 100%;
+  border: 1px solid rgba(214, 213, 213, 0.7); 
+  color: #333; 
+  font-weight: bold;
+  border-radius: 10px;
+  background: #ffffff; 
+  font-size: 13px;
+  padding: 2%;
+  position: relative; 
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.showStatus {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: rgb(34, 255, 1); 
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid white; 
+}
+
+.tags {
+  width: max-content;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #f4f5f8;
+  color: #7d7d7d;
+  padding: 4px 8px; 
+}
+
+.cardTags {
+  align-items: center;
+  font-size: smaller;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .dashCardContainer {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashCardContainer {
+    width: 45%;
+  }
+
+  .cardContainer {
+    padding: 3%; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dashCardContainer {
+    width: 100%;
+  }
+
+  .dashCardHeading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cardContainer {
+    padding: 5%; 
+  }
+}
