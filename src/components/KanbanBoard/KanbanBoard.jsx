@@ -36,105 +36,94 @@ const KanbanBoard = () => {
               style={{ width: `${cardWidthPercentage}%` }}
             >
               <div className="dashCardHeading flex-sb">
-                <div className="leftView">
-                  {user ? (
-                    <div
-                      className="imageContainer relative"
-                      style={{
+  <div className="leftView">
+    {user ? (
+      <div
+        className="imageContainer relative"
+        style={{
+          width: "10px",
+          height: "15px",
+          display: "inline-block",
+          border: "none", // Ensures no border
+        }}
+      ></div>
+    ) : isStatus ? (
+      <div
+        className="cardTitle"
+        style={{
+          display: "inline-block",
+          fontWeight: 200,
+          border: "none", // Ensures no border
+        }}
+      >
+        {element[index].title === "Backlog" ? (
+          <BiLoader style={{ fontSize: "13px", border: "none" }} />
+        ) : element[index].title === "Todo" ? (
+          <FaRegCircle style={{ fontSize: "13px", color: "#ddeded", border: "none" }} />
+        ) : element[index].title === "In progress" ? (
+          <BiAdjust style={{ fontSize: "13px", color: "#f2d750", border: "none" }} />
+        ) : element[index].title === "Done" ? (
+          <BsCheckCircleFill style={{ border: "none" }} />
+        ) : (
+          <IoMdCloseCircleOutline style={{ border: "none" }} />
+        )}
+      </div>
+    ) : isPriority ? (
+      <div
+        className="tags color-grey"
+        style={{
+          display: "inline-block",
+          border: "none", // Ensures no border
+        }}
+      >
+        {["Low", "Medium", "High"].includes(element[index].title) ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            className="bi bi-signal"
+            viewBox="0 0 16 16"
+            style={{ border: "none" }} // Removes border for the SVG
+          >
+            <rect x="1" y="10" width="3" height="2" style={{ border: "none" }} />
+            <rect
+              x="5"
+              y="7"
+              width="3"
+              height="5"
+              opacity={["Medium", "High"].includes(element[index].title) ? 1 : 0.25}
+              style={{ border: "none" }} // Removes border for the rect element
+            />
+            <rect
+              x="9"
+              y="4"
+              width="3"
+              height="8"
+              opacity={element[index].title === "High" ? 1 : 0.25}
+              style={{ border: "none" }} // Removes border for the rect element
+            />
+          </svg>
+        ) : element[index].title === "Urgent" ? (
+          <BsFillExclamationSquareFill style={{ border: "none" }} />
+        ) : (
+          <p></p>
+        )}
+      </div>
+    ) : (
+      <DiCodeigniter style={{ border: "none" }} />
+    )}
+    <span>
+      {element[index]?.title} {element[index].value?.length}
+    </span>
+  </div>
+  <div className="rightView">
+    <AiOutlinePlus style={{ border: "none" }} />{" "}
+    <span style={{ letterSpacing: "2px", border: "none" }}>...</span>
+  </div>
+</div>
 
-                        width: "10px",
-                        height: "15px",
-                        display: "inline-block",
-                      }}
-                    >
-                    </div>
-                  ) : isStatus ? (
-                    <div
-                      className="cardTitle"
-                      style={{
-                        width: "15px",
-                        height: "15px",
-                        display: "inline-block",
-                        fontWeight: 200,
-                      }}
-                    >
-                      {element[index].title === "Backlog" ? (
-                        <BiLoader style={{ fontSize: "13px" }} />
-                      )
-                        : element[index].title === "Todo" ? (
-                          <FaRegCircle
-                            style={{ fontSize: "13px", color: "#ddeded" }}
-                          />
-                        ) : element[index].title === "In progress" ? (
-                          <BiAdjust
-                            style={{ fontSize: "13px", color: "#f2d750" }}
-                          />
-                        ) : element[index].title === "Done" ? (
-                          <BsCheckCircleFill />
-                        ) : (
-                          <IoMdCloseCircleOutline />
-                        )}
-                    </div>
-                  ) : isPriority ? (
-                    <div
-                      className="tags color-grey"
-                      style={{
-                        width: "35px",
-                        height: "30px",
-                        display: "inline-block",
-                      }}
-                    >
-                      {element[index].title === "Low" ||
-                        element[index].title === "Medium" ||
-                        element[index].title === "High" ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
 
-                          width="24"
-                          height="24"
-                          fill="currentColor"
-                          className="bi bi-signal"
-                          viewBox="0 0 16 16"
-                        >
-                          <rect x="1" y="10" width="3" height="2" />
-                          <rect
-                            x="5"
-                            y="7"
-                            width="3"
-                            height="5"
-                            opacity={
-                              element[index].title === "Medium" ||
-                                element[index].title === "High"
-                                ? 1
-                                : 0.25
-                            }
-                          />
-                          <rect
-                            x="9"
-                            y="4"
-                            width="3"
-                            height="8"
-                            opacity={element[index].title === "High" ? 1 : 0.25}
-                          />
-                        </svg>
-                      ) : element[index].title === "Urgent" ? (
-                        <BsFillExclamationSquareFill />
-                      ) : (
-                        <p></p>
-                      )}
-                    </div>
-                  ) : (
-                    <DiCodeigniter />
-                  )}{" "}
-                  <span>
-                    {element[index]?.title} {element[index].value?.length}
-                  </span>
-                </div>
-                <div className="rightView">
-                  <AiOutlinePlus />{" "}
-                  <span style={{ letterSpacing: "2px" }}>...</span>
-                </div>
-              </div>
               <div className="dashList flex-gap-10">
                 {element[index]?.value?.map((element, ind) => {
                   return (

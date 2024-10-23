@@ -49,6 +49,45 @@
   flex-wrap: wrap;
 }
 
+.rightView {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  align-items: center; /* Ensures vertical alignment */
+  gap: 5px; /* Adjust spacing between elements */
+}
+
+.rightView span {
+  display: inline-block;
+  margin-left: 8px; /* Adds space between the icon and the text */
+}
+
+.rightView svg {
+  font-size: 16px; /* Adjust size of the icons if needed */
+}
+.leftView {
+  margin-bottom: 0;
+  padding: 0%;
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the left */
+  align-items: center; /* Ensures vertical alignment */
+  gap: 8px; /* Adjusts the space between the elements */
+}
+
+.leftView span {
+  display: inline-block;
+  margin-left: 5px; /* Adds space between text and preceding elements */
+}
+
+.leftView svg {
+  font-size: 16px; /* Adjust the size of the icons as needed */
+}
+.dashCardHeading {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between left and right views */
+  align-items: center; /* Center align items vertically */
+}
+
+
 
 @media screen and (max-width: 1200px) {
   .dashCardContainer {
